@@ -4,31 +4,31 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: nseremwe/udagram-frontend
+      - image: cimg/udagram-frontend:latest
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: my-build-commands
+      - run: echo "this is the build job"
   test:
     docker:
-      - image: nseremwe/udagram-frontend
+      - image: cimg/udagram-frontend:latest
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: my-test-commands
+      - run: echo "this is the test job"
   deploy:
     docker:
-      - image: nseremwe/udagram-frontend
+      - image: cimg/udagram-frontend:latest
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: my-deploy-commands
+      - run: echo "this is the deploy job"
 
 # Orchestrate our job run sequence
 workflows:
