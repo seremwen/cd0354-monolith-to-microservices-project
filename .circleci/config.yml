@@ -6,7 +6,7 @@ jobs:
     docker:
       - image: nseremwe/udagram-api-feed
         auth:
-          username: nseremwe
+          username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
@@ -15,7 +15,7 @@ jobs:
     docker:
       - image: nseremwe/udagram-frontend
         auth:
-          username: nseremwe
+          username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
@@ -24,7 +24,7 @@ jobs:
     docker:
       - image: nseremwe/udagram-api-user
         auth:
-          username: nseremwe
+          username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
