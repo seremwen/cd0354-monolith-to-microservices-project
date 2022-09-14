@@ -4,7 +4,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: nseremwe/udagram-api-user:v1
+      - image: reverseproxy:latest
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -13,7 +13,7 @@ jobs:
       - run: echo "this is the build job"
   test:
     docker:
-      - image: nseremwe/udagram-api-user:v1
+      - image: reverseproxy:latest
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
@@ -22,7 +22,7 @@ jobs:
       - run: echo "this is the test job"
   deploy:
     docker:
-      - image: nseremwe/udagram-api-user:v1
+      - image: reverseproxy:latest
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
